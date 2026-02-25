@@ -201,5 +201,5 @@ This project demonstrates:
 ## 👤 Author
 
 Keerthi Adapa  
-Email: keerthi.adapa@gmail.com  
-GitHub: https://github.com/yourusername
+Email: keerthiadapa70@gmail.com  
+GitHub: https://github.com/Devikeerthi000
