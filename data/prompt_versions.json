@@ -1,0 +1,8 @@
+{
+  "v1": {
+    "template": "Write a professional LinkedIn post about {topic}. Include 5 hashtags."
+  },
+  "v2": {
+    "template": "Write a concise, engaging and professional LinkedIn post about {topic}. Use 3-5 relevant hashtags at the end."
+  }
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "input": "AI in healthcare",
+    "expected_rules": {
+      "max_words": 150,
+      "must_have_hashtags": 5,
+      "tone": "professional"
+    }
+  },
+  {
+    "input": "Startup fundraising tips",
+    "expected_rules": {
+      "max_words": 120,
+      "must_have_hashtags": 3,
+      "tone": "professional"
+    }
+  }
+]
