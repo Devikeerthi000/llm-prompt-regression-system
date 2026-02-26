@@ -24,34 +24,6 @@ Outputs:
 - Regression detection (improved / regressed)
 - CLI-based evaluation report
 
----
-
-## 🗂️ Evaluation Dataset
-
-Test cases are defined in JSON format.
-
-Example:
-
-[
-  {
-    "input": "AI in healthcare",
-    "expected_rules": {
-      "max_words": 150,
-      "must_have_hashtags": 5,
-      "tone": "professional"
-    }
-  }
-]
-
-Each test case defines:
-- Input topic
-- Maximum word limit
-- Required hashtag count
-- Expected tone
-
-The system is configurable and can support any domain (LinkedIn posts, emails, marketing copy, summaries, etc.).
-
----
 
 ## 🛠️ Methodology (High Level)
 
