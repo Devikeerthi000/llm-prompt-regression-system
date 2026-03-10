@@ -174,7 +174,6 @@ PromptGuard AI brings **software engineering discipline** to prompt management:
 
 <div align="center">
 
-**Built with ❤️ for the AI Engineering Community**
 
 </div>
 - Web dashboard (Streamlit / FastAPI)  
