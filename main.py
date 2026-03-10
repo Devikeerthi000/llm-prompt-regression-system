@@ -1,32 +1,46 @@
-from app.prompt_store import load_prompts, load_test_cases
-from app.llm_runner import LLMRunner
-from app.evaluator import evaluate_output
-from app.regression import run_regression
+from src.config.settings import get_settings
+from src.core.logging import setup_logging
+from src.data.store import PromptStore, TestCaseStore
+from src.engine.analyzer import RegressionAnalyzer
+from src.engine.reporter import ReportGenerator
+from src.engine.runner import RegressionRunner
+from src.evaluators.registry import get_default_evaluators
+from src.providers.factory import create_provider
+
 
 def main():
-    prompts = load_prompts()
-    test_cases = load_test_cases()
+    # Setup
+    settings = get_settings()
+    setup_logging(level=settings.log_level)
 
-    llm_runner = LLMRunner()
+    # Load data
+    prompt_store = PromptStore(settings.data_dir / "prompt_versions.json")
+    test_store = TestCaseStore(settings.data_dir / "test_cases.json")
 
-    results = run_regression(prompts, test_cases, llm_runner, evaluate_output)
+    print(f"Loaded {len(prompt_store)} prompt versions, {len(test_store)} test cases")
 
-    versions = list(results.keys())
+    # Create provider and evaluator
+    provider = create_provider(settings=settings)
+    evaluator = get_default_evaluators(provider)
 
-    if len(versions) >= 2:
-        v1, v2 = versions[0], versions[1]
-        diff = results[v2] - results[v1]
+    print(f"Using model: {provider.model}")
 
-        print("\n--- Regression Comparison ---")
-        print(f"{v1} Score: {round(results[v1],3)}")
-        print(f"{v2} Score: {round(results[v2],3)}")
+    # Run regression
+    runner = RegressionRunner(provider, evaluator, pass_threshold=settings.evaluation.pass_threshold)
+    report = runner.run_regression(prompt_store, test_store)
 
-        if diff > 0:
-            print(f"{v2} improved by {round(diff, 3)}")
-        elif diff < 0:
-            print(f"{v2} regressed by {round(abs(diff), 3)}")
-        else:
-            print("No change detected.")
+    # Analyze
+    analyzer = RegressionAnalyzer(regression_threshold=settings.evaluation.regression_threshold)
+    report = analyzer.analyze_report(report)
+
+    # Print results
+    reporter = ReportGenerator()
+    reporter.print_summary(report)
+
+    # Recommendation
+    print()
+    print(analyzer.get_recommendation(report))
+
 
 if __name__ == "__main__":
     main()
