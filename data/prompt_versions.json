@@ -1,8 +1,18 @@
 {
   "v1": {
-    "template": "Write a professional LinkedIn post about {topic}. Include 5 hashtags."
+    "template": "Write a professional LinkedIn post about {topic}. Include 5 hashtags.",
+    "description": "Baseline — minimal instruction, no tone or length guidance"
   },
   "v2": {
-    "template": "Write a concise, engaging and professional LinkedIn post about {topic}. Use 3-5 relevant hashtags at the end."
+    "template": "Write a concise, engaging and professional LinkedIn post about {topic}. Keep it under 150 words. Use 3-5 relevant hashtags at the end. Maintain a confident yet approachable tone throughout.",
+    "description": "Added explicit word limit, hashtag range, and tone direction"
+  },
+  "v3": {
+    "template": "You are a senior thought leader on LinkedIn with 50K+ followers. Write a post about {topic} that would generate high engagement. Structure: hook line → insight → actionable takeaway → call-to-action question. Keep it under 120 words. End with exactly 4 industry-relevant hashtags. Tone: authoritative but conversational.",
+    "description": "Role-play prompt with structured output format and strict constraints"
+  },
+  "v4": {
+    "template": "Write a LinkedIn post about {topic}.\n\nRules:\n- Maximum 130 words\n- Start with a bold or surprising opening line\n- Include one concrete statistic or data point (you may estimate if needed)\n- Provide exactly one actionable tip the reader can use today\n- End with a question to drive comments\n- Use exactly 5 hashtags, mixing broad (#AI, #Tech) and niche ones\n- Tone: professional, forward-thinking, optimistic\n\nDo NOT use generic filler phrases like 'In today's world' or 'It's no secret that'.",
+    "description": "Highly constrained with negative instructions, structural requirements, and anti-pattern rules"
   }
 }

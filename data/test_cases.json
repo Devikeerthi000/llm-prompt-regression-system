@@ -5,14 +5,88 @@
       "max_words": 150,
       "must_have_hashtags": 5,
       "tone": "professional"
-    }
+    },
+    "tags": ["ai", "healthcare", "industry-vertical"]
   },
   {
-    "input": "Startup fundraising tips",
+    "input": "Startup fundraising tips for seed-stage founders",
+    "expected_rules": {
+      "max_words": 130,
+      "must_have_hashtags": 4,
+      "tone": "professional"
+    },
+    "tags": ["startups", "fundraising", "entrepreneurship"]
+  },
+  {
+    "input": "Why remote work is here to stay in 2026",
+    "expected_rules": {
+      "max_words": 120,
+      "must_have_hashtags": 5,
+      "tone": "professional"
+    },
+    "tags": ["remote-work", "future-of-work", "opinion"]
+  },
+  {
+    "input": "The rise of open-source LLMs and what it means for enterprise adoption",
+    "expected_rules": {
+      "max_words": 150,
+      "must_have_hashtags": 5,
+      "tone": "professional"
+    },
+    "tags": ["llm", "open-source", "enterprise", "technical"]
+  },
+  {
+    "input": "How to build a personal brand on LinkedIn as a software engineer",
+    "expected_rules": {
+      "max_words": 140,
+      "must_have_hashtags": 4,
+      "tone": "professional"
+    },
+    "tags": ["personal-branding", "career-growth", "linkedin"]
+  },
+  {
+    "input": "Data privacy regulations and their impact on AI product development",
+    "expected_rules": {
+      "max_words": 150,
+      "must_have_hashtags": 5,
+      "tone": "professional"
+    },
+    "tags": ["privacy", "regulation", "compliance", "ai-ethics"]
+  },
+  {
+    "input": "The importance of mentorship in early-career tech professionals",
     "expected_rules": {
       "max_words": 120,
       "must_have_hashtags": 3,
       "tone": "professional"
-    }
+    },
+    "tags": ["mentorship", "career", "soft-skills"]
+  },
+  {
+    "input": "MLOps best practices for deploying models at scale",
+    "expected_rules": {
+      "max_words": 140,
+      "must_have_hashtags": 5,
+      "tone": "professional"
+    },
+    "tags": ["mlops", "deployment", "infrastructure", "technical"]
+  },
+  {
+    "input": "Lessons learned from scaling a SaaS product from 0 to 10K users",
+    "expected_rules": {
+      "max_words": 130,
+      "must_have_hashtags": 4,
+      "tone": "professional"
+    },
+    "tags": ["saas", "growth", "product", "founder-story"]
+  },
+  {
+    "input": "Why prompt engineering is becoming a critical skill for every developer",
+    "expected_rules": {
+      "max_words": 150,
+      "must_have_hashtags": 5,
+      "tone": "professional"
+    },
+    "tags": ["prompt-engineering", "developer-skills", "ai", "meta"]
   }
 ]
